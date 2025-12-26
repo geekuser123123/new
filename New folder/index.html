@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="theme-color" content="#f6f8fa" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#161b22" media="(prefers-color-scheme: dark)">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Light theme */
+        body.light {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Dark theme */
+        body.dark {
+            background-color: #000;
+            color: #ffffff;
+        }
+</style>
+</head>
+<body class="light">
+
+  <h2>Choose Theme</h2>
+
+  <label>
+    <input type="radio" name="theme" value="light"checked>
+    Light
+  </label>
+
+  <label>
+    <input type="radio" name="theme" value="dark" >
+    Dark
+  </label>
+
+  <p>This is some sample text.</p>
+    
+  <script>
+    const radios = document.querySelectorAll('input[name="theme"]');
+
+    radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            document.body.className = radio.value;
+        });
+    });
+  </script>
+
+</body>
+</html>
